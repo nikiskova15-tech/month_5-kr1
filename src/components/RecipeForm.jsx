@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { useRecipeStore } from "../store/useFavoritesStore.js/useRecipeStore"
 
-
 export default function TodoForm() {
     const [title, setTitle] = useState('')
     const { addTodo } = useRecipeStore()
