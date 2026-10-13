@@ -1,6 +1,6 @@
 import { useLoaderData } from 'react-router-dom';
-import RecipeCard from '../components/RecipeCard';
 import RecipeFilters from '../components/RecipeFilters';
+import RecipeList from '../components/RecipeList';
 import RecentlyViewed from '../components/RecentlyViewed';
 
 export default function HomePage() {
@@ -12,15 +12,7 @@ export default function HomePage() {
 
             <RecipeFilters />
 
-            <div className="recipes">
-                {data.recipes.map((recipe) => (
-                    <RecipeCard key={recipe.id} recipe={recipe} />
-                ))}
-            </div>
-
-            {data.recipes.length === 0 && (
-                <p>Рецепты не найдены.</p>
-            )}
+            <RecipeList recipes={data.recipes} />
 
             <RecentlyViewed />
         </div>
