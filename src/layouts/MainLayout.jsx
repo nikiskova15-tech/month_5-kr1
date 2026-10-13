@@ -1,8 +1,8 @@
-import { Link, Outlet, useNavigation } from "react-router-dom"
-import Loader from "../components/Loader"
+import { Link, Outlet, useNavigation } from 'react-router-dom';
+import Loader from '../components/Loader';
 
 export default function MainLayout() {
-  const navigation = useNavigation()
+  const navigation = useNavigation();
 
   return (
     <div className="container">
@@ -18,12 +18,14 @@ export default function MainLayout() {
       </header>
 
       <main>
-        {navigation.state === "loading" ? <Loader /> : <Outlet />}
+        <Outlet />
       </main>
+
+      {navigation.state === 'loading' && <Loader />}
 
       <footer>
         <p>2026 RecipeBook</p>
       </footer>
     </div>
-  )
+  );
 }

@@ -12,7 +12,7 @@ export default function RecipePage() {
 
     return (
         <div className="recipe-details">
-            <Link to="/">Назад в каталог</Link>
+            <Link to="/">← Назад в каталог</Link>
 
             <h1>{recipe.name}</h1>
 
